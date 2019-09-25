@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="MatrixTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" SizeChanged="Page_SizeChanged">
+    <Grid>
+        <Canvas x:Name="Spawner" Background="#202020" ManipulationDelta="Spawner_ManipulationDelta" ManipulationMode="All"/>
+
+        <ItemsControl x:Name="ItemsControl">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Ellipse Width="64" Height="64" Fill="DeepSkyBlue"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <StackPanel VerticalAlignment="Center">
+            <Slider ValueChanged="Slider_ValueChanged"/>
+            <Slider ValueChanged="Slider_ValueChanged_1"/>
+            <Slider ValueChanged="Slider_ValueChanged_2"/>
+            <Slider ValueChanged="Slider_ValueChanged_3"/>
+            <Slider ValueChanged="Slider_ValueChanged_4"/>
+        </StackPanel>
+    </Grid>
+</Page>
